@@ -3,7 +3,7 @@ import { Hamburger, Search, User } from './Icons';
 
 const Header = () => {
     return (
-        <div className=" navigation fixed top-0 z-10 w-full h-32 bg-orange-600 px-4 py-4">
+        <div className=" navigation fixed top-0 z-50 w-full h-32 bg-orange-600 px-4 py-4">
             <div className='flex items-center justify-between pb-2'>
                 <button className='sm:hidden'>
                     <Hamburger />

@@ -10,7 +10,6 @@ function App() {
     <Navigation/>
     <HeroSection/>
     <SuggestedProducts/>
-    <ProductSection category='Category'/>
     <ProductSection category='Brand'/>
     <Footer/>
   </div>

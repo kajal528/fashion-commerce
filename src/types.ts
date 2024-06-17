@@ -1,5 +1,5 @@
-export interface categoryInterface{
-    categoryName: string;
-    categoryId: number;
-    categoryImg: string;
+export interface imageCarouselItemInterface{
+    text: string;
+    id: number;
+    image: string;
 }

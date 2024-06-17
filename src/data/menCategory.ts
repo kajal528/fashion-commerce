@@ -10,49 +10,49 @@ import Shirts from '../assets/category/men-shirt.jpg'
 export const menCategory = {
     "menCategory": [
         {
-            "categoryId": 1,
-            "categoryName": "Kurta",
-            "categoryImg":Kurta
+            "id": 1,
+            "text": "Kurta",
+            "image":Kurta
         },
         {
-            "categoryId": 2,
-            "categoryName": "Shoes",
-            "categoryImg":Shoes
+            "id": 2,
+            "text": "Shoes",
+            "image":Shoes
         },
         {
-            "categoryId": 3,
-            "categoryName": "Bag",
-            "categoryImg":Handbag
+            "id": 3,
+            "text": "Bag",
+            "image":Handbag
         },
         {
-            "categoryId": 4,
-            "categoryName": "Jeans",
-            "categoryImg":Jeans
+            "id": 4,
+            "text": "Jeans",
+            "image":Jeans
         },
         {
-            "categoryId": 5,
-            "categoryName": "Trousers",
-            "categoryImg":Trousers
+            "id": 5,
+            "text": "Trousers",
+            "image":Trousers
         },
         {
-            "categoryId": 6,
-            "categoryName": "Jackets",
-            "categoryImg":Jackets
+            "id": 6,
+            "text": "Jackets",
+            "image":Jackets
         },
         {
-            "categoryId": 7,
-            "categoryName": "Shirt",
-            "categoryImg":Shirts
+            "id": 7,
+            "text": "Shirt",
+            "image":Shirts
         },
         {
-            "categoryId": 8,
-            "categoryName": "Trackpants",
-            "categoryImg":Trackpants
+            "id": 8,
+            "text": "Trackpants",
+            "image":Trackpants
         },
         {
-            "categoryId": 9,
-            "categoryName": "T-shirt",
-            "categoryImg":Jackets
+            "id": 9,
+            "text": "T-shirt",
+            "image":Jackets
         }
     ]
 }

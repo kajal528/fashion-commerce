@@ -8,8 +8,7 @@ const Header = () => {
                 <button className='sm:hidden'>
                     <Hamburger />
                 </button>
-                <div className='flex items-center'>
-                    <img src={logo} alt="logo" width="50px" height="50px"/>
+                <div className='flex items-center h-12'>
                     <span className="text-white font-bold text-lg">Fashion</span>
                 </div>
                 <button>

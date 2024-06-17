@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "./Icons"
-import { categoryInterface } from "../types";
+import { imageCarouselItemInterface } from "../types";
 
-const ImageCarousel = (props: { productData: categoryInterface[] }) => {
+const ImageCarousel = (props: { productData: imageCarouselItemInterface[] }) => {
     const imageWidth = 11;
     const { productData } = props;
     const [productIndex, setProductIndex] = useState(0);
@@ -19,7 +19,7 @@ const ImageCarousel = (props: { productData: categoryInterface[] }) => {
     }
     const handleRightClick = () => {
         setImageCarouselItems(prev => prev+1);
-        setProductIndex((prev) => prev < productData.length - 1 ? prev + 1 : prev = 0);
+        setProductIndex((prev) => prev < productData.length ? prev + 1 : prev = 0);
     }
 
     return (
@@ -29,10 +29,10 @@ const ImageCarousel = (props: { productData: categoryInterface[] }) => {
             }}>
                 {productData.map((data, index) => {
                     return (
-                        <a href="#" key={data.categoryId}>
+                        <a href="#" key={data.id}>
                             <div className={`w-${imageWidth*4} shrink-0 border-2 shadow-md border-transparent aria-hidden:${index<productIndex?'true':'false'}`} >
-                                <img src={data.categoryImg} alt="image" className="h-40 w-full" />
-                                <p className="text-center py-2">{data.categoryName}</p>
+                                <img src={data.image} alt="image" className="h-40 w-full" />
+                                <p className="text-center py-2">{data.text}</p>
                             </div>
                         </a>
 
@@ -44,7 +44,7 @@ const ImageCarousel = (props: { productData: categoryInterface[] }) => {
                     onClick={handleLeftClick}>
                     <ArrowLeft />
                 </button>}
-            {imageCarouselItems<productData.length ?
+            {imageCarouselItems<=productData.length ?
                 <button className=" absolute right-0 top-1/2 -translate-y-1/2 py-2 px-2 border-[1px] rounded-full shadow-sm bg-slate-100 "
                     onClick={handleRightClick} >
                     <ArrowRight />

@@ -10,54 +10,54 @@ import Dress from '../assets/category/women-dress.jpg'
 export const womenCategory = {
     "womenCategory": [
         {
-            "categoryId": 1,
-            "categoryName": "Kurta",
-            "categoryImg":Kurta
+            "id": 1,
+            "text": "Kurta",
+            "image":Kurta
         },
         {
-            "categoryId": 2,
-            "categoryName": "Shoes",
-            "categoryImg":Shoes
+            "id": 2,
+            "text": "Shoes",
+            "image":Shoes
         },
         {
-            "categoryId": 3,
-            "categoryName": "Bag",
-            "categoryImg":Handbag
+            "id": 3,
+            "text": "Bag",
+            "image":Handbag
         },
         {
-            "categoryId": 4,
-            "categoryName": "Jeans",
-            "categoryImg":Jeans
+            "id": 4,
+            "text": "Jeans",
+            "image":Jeans
         },
         {
-            "categoryId": 5,
-            "categoryName": "Trousers",
-            "categoryImg":Trousers
+            "id": 5,
+            "text": "Trousers",
+            "image":Trousers
         },
         {
-            "categoryId": 6,
-            "categoryName": "Jackets",
-            "categoryImg":Jackets
+            "id": 6,
+            "text": "Jackets",
+            "image":Jackets
         },
         // {
-        //     "categoryId": 7,
-        //     "categoryName": "Shirt",
-        //     "categoryImg":""
+        //     "id": 7,
+        //     "text": "Shirt",
+        //     "image":""
         // },
         {
-            "categoryId": 8,
-            "categoryName": "Dress",
-            "categoryImg":Dress
+            "id": 8,
+            "text": "Dress",
+            "image":Dress
         },
         {
-            "categoryId": 9,
-            "categoryName": "Trackpants",
-            "categoryImg":Trackpants
+            "id": 9,
+            "text": "Trackpants",
+            "image":Trackpants
         },
         // {
-        //     "categoryId": 10,
-        //     "categoryName": "T-shirt",
-        //     "categoryImg":""
+        //     "id": 10,
+        //     "text": "T-shirt",
+        //     "image":""
         // }
     ]
 }

@@ -9,7 +9,7 @@ const HeroSection = () => {
     const img4 = sneaker
 
     return (
-            <div className=" hero-container flex relative h-80 mt-32 ">
+            <div className=" hero-container flex relative h-80 mt-16 ">
               {slide===0 &&
                <div className={` hero-item w-full overflow-hidden `}>
                     <img src={img1} alt={"image-1"} className="w-full h-full object-cover object-center transition ease-in-out duration-200  hover:scale-105"/>

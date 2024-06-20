@@ -15,12 +15,12 @@ const Sidebar = (props: SidebarInterface) => {
 
 
   return (
-    <div className=" sidebar">
-      <div className="sidebar-header bg-orange-600 w-full h-12 flex items-center px-2 ">
+    <div className=" sidebar flex flex-col h-full">
+      <div className="sidebar-header shrink-0 bg-orange-600 w-full h-12 flex items-center px-2 ">
         <button onClick={props.handleClick}><CloseButton /></button>
       </div>
-      <div className=" sidebar-list-container px-5 py-5 h-full" onClick={(event) => event.stopPropagation()}>
-        <ul>
+      <div className=" sidebar-list-container px-5 py-5" onClick={(event) => event.stopPropagation()}>
+        <ul className=" cursor-pointer">
           <li className=" px-2 pb-1">
             <a href="#" className="flex items-center justify-between gap-1 font-bold" onClick={(event) => { event.stopPropagation(); setMenShowSubcategory(!showMenSubcategory) }}>
               <span>Men</span>
@@ -28,7 +28,7 @@ const Sidebar = (props: SidebarInterface) => {
             </a>
             {showMenSubcategory ? menCategory.menCategory.map((data) => {
               return (
-                <li className=" px-4 py-1 hover:cursor-pointer hover:bg-gray-200 rounded border-2 border-transparent">
+                <li className=" px-4 py-1  hover:bg-gray-200 rounded border-2 border-transparent">
                   <a href="#" className="flex items-center gap-1">
                     {data.text}
                   </a>
@@ -43,7 +43,7 @@ const Sidebar = (props: SidebarInterface) => {
             </a>
             {showWomenSubcategory ? womenCategory.womenCategory.map((data) => {
               return (
-                <li className=" px-4 py-1 hover:cursor-pointer hover:bg-gray-200 rounded border-2 border-transparent">
+                <li className=" px-4 py-1  hover:bg-gray-200 rounded border-2 border-transparent">
                   <a href="#" className="flex items-center gap-1">
                     {data.text}
                   </a>
@@ -58,7 +58,7 @@ const Sidebar = (props: SidebarInterface) => {
             </a>
             {showBrandSubcategory ? brand.brand.map((data) => {
               return (
-                <li className=" px-4 py-1 hover:cursor-pointer hover:bg-gray-200 rounded border-2 border-transparent">
+                <li className=" px-4 py-1  hover:bg-gray-200 rounded border-2 border-transparent">
                   <a href="#" className="flex items-center gap-1">
                     {data.text}
                   </a>
@@ -66,9 +66,27 @@ const Sidebar = (props: SidebarInterface) => {
               )
             }) : ""}
           </li>
-
+        </ul>
+        <div className=" w-full h-[1px] bg-gray-400 my-5" />
+        <ul className=" cursor-pointer">
+          <li className=" px-2 pb-1">
+            <a href=""> Account</a>
+          </li>
+          <li className=" px-2 pb-1">
+            <a href="">Orders</a>
+          </li>
+          <li className=" px-2 pb-1">
+            <a href="">Wishlist</a>
+          </li>
         </ul>
       </div>
+      <div className=" grow flex flex-col justify-end">
+      <button className=" logout px-4 py-2 border-2 bg-gray-200 ">
+        Log out
+      </button>
+      </div>
+   
+      
     </div>
   )
 }

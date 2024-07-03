@@ -1,14 +1,13 @@
 import ProductSection from "./ProductSection"
 import SuggestedProducts from "./SuggestedProducts"
 
-const Main = () => {
+const MainSection = () => {
   return (
     <div className="mb-10">
     <SuggestedProducts/>
     <ProductSection category='Brand'/>
     </div>
-   
   )
 }
 
-export default Main
+export default MainSection

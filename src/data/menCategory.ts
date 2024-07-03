@@ -1,11 +1,12 @@
-import Kurta from '../assets/category/women-kurta.jpg'
-import Trousers from '../assets/category/women-trouser.jpg'
-import Jeans from '../assets/category/jeans.jpg'
-import Jackets from '../assets/category/jacket.jpg'
-import Trackpants from '../assets/category/trackpants.jpg'
-import Shoes from '../assets/category/shoe.jpg'
-import Handbag from '../assets/category/handbag.jpg'
-import Shirts from '../assets/category/men-shirt.jpg'
+import Kurta from '../assets/category/men-clothing/men-kurta.jpg'
+import Trousers from '../assets/category/men-clothing/men-trouser.jpg'
+import Jeans from '../assets/category/men-clothing/men-jeans.jpg'
+import Jackets from '../assets/category/men-clothing/men-jacket.jpg'
+import Trackpants from '../assets/category/men-clothing/men-trackpants.jpg'
+import Shoes from '../assets/category/men-clothing/men-shoes.jpg'
+import Shirts from '../assets/category/men-clothing/men-shirt.jpg'
+import TShirts from '../assets/category/men-clothing/men-tshirt.jpg'
+import Wallet from '../assets/category/men-clothing/men-wallet.jpg'
 
 export const menCategory = {
     "menCategory": [
@@ -21,8 +22,8 @@ export const menCategory = {
         },
         {
             "id": 3,
-            "text": "Bag",
-            "image":Handbag
+            "text": "Wallet",
+            "image": Wallet
         },
         {
             "id": 4,
@@ -41,7 +42,7 @@ export const menCategory = {
         },
         {
             "id": 7,
-            "text": "Shirt",
+            "text": "Shirts",
             "image":Shirts
         },
         {
@@ -51,8 +52,8 @@ export const menCategory = {
         },
         {
             "id": 9,
-            "text": "T-shirt",
-            "image":Jackets
+            "text": "TShirts",
+            "image":TShirts
         }
     ]
 }

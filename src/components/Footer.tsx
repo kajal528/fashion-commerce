@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram } from "./Icons"
 
 const Footer = () => {
     return (
-        <footer className="footer bg-gray-600 text-slate-200 py-4 text-center ">
+        <footer className="footer bg-gray-600 text-slate-200 py-4 text-center self-end w-full">
             <div className=" flex flex-col">
                 <a href="#">About us</a>
                 <a href="#">Contact us</a>
@@ -20,7 +20,6 @@ const Footer = () => {
                 </li>
             </div>
             <p>&copy; Copyright Fashion 2024</p>
-
         </footer>
     )
 }

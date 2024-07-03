@@ -42,12 +42,12 @@ const ImageCarousel = (props: { productData: imageCarouselItemInterface[] }) => 
             {productIndex > 0 &&
                 <button className=" absolute left-0 top-1/2 -translate-y-1/2 py-2 px-2 border-[1px] rounded-full shadow-sm bg-slate-100 "
                     onClick={handleLeftClick}>
-                    <ArrowLeft />
+                    <ArrowLeft size={6}/>
                 </button>}
             {imageCarouselItems<=productData.length ?
                 <button className=" absolute right-0 top-1/2 -translate-y-1/2 py-2 px-2 border-[1px] rounded-full shadow-sm bg-slate-100 "
                     onClick={handleRightClick} >
-                    <ArrowRight />
+                    <ArrowRight size={6}/>
                 </button>:""
             }
         </div>

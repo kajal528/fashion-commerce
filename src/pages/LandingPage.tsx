@@ -1,7 +1,17 @@
 
+import Footer from "../components/Footer"
+import HeroSection from "../components/HeroSection"
+import MainSection from "../components/MainSection"
+import Navigation from "../components/Navigation"
+
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <>
+      <Navigation />
+      <HeroSection />
+      <MainSection />
+      <Footer />
+    </>
   )
 }
 

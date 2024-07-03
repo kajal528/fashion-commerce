@@ -2,6 +2,7 @@ import { MouseEvent, useState } from 'react';
 import { Cart, Hamburger, Search, User } from './Icons';
 import Sidebar from './Sidebar';
 import AccountDropdown from './AccountDropdown';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -22,18 +23,18 @@ const Header = () => {
                 <div className=' hidden sm:block sm:w-full'>
                 <ul className='flex gap-5 text-white cursor-pointer'>
                     <li className=' hover:underline hover:font-bold'>
-                        Men
+                        <Link to='/products'>Men</Link>
                     </li>
                     <li className=' hover:underline hover:font-bold'>
-                        Women
+                    <Link to='/products'>Women</Link>
                     </li>
                     <li className=' hover:underline hover:font-bold'>
-                        Brand
+                    <Link to='/products'>Brand</Link>
                     </li>
                 </ul>
                 </div>
                 </div>
-                <div className="app-name basis-1/3 md:basis-1/4 text-center md:text-end md:px-4 text-white font-bold text-lg">Fashion</div>
+                <div className="app-name basis-1/3 md:basis-1/4 text-center md:text-end md:px-4 text-white font-bold text-lg"><Link to='/'>Fashion</Link></div>
 
                 <div className=' basis-1/3 md:basis-1/2 flex gap-5 justify-end'>
                 <div className='search-box md:flex w-full bg-white px-2 py-1 rounded-full hidden items-center max-w-60'>
@@ -47,9 +48,9 @@ const Header = () => {
                         {showAccountDropdown && <AccountDropdown />}
                     </div>
                     <div>
-                    <button>
+                    <Link to='/cart'>
                         <Cart />
-                    </button>
+                    </Link>
                     </div> 
                 </div>
                 

@@ -1,16 +1,20 @@
-import Navigation from './components/Navigation'
-import HeroSection from './components/HeroSection'
-import Footer from './components/Footer'
-import Main from './components/Main'
+import LandingPage from './pages/LandingPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ProductPage from './pages/ProductPage'
+import ProductDescription from './pages/ProductDescription'
+import Cart from './pages/Cart'
 
 function App() {
-  return(
-  <div>
-    <Navigation/>
-    <HeroSection/>
-    <Main/>
-    <Footer/>
-  </div>
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='products' element={<ProductPage />}/>
+        <Route path='product/:productname' element={<ProductDescription />}/>
+        <Route path='cart' element={<Cart />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

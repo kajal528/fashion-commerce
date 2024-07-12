@@ -1,8 +1,7 @@
-// const express = require('express')
-// const braintree = require('braintree')
 import express from 'express'
 import braintree from 'braintree'
 import cors from 'cors'
+import 'dotenv/config'
 
 const app = express();
 
@@ -14,9 +13,9 @@ app.use(express.json());
 const gateway = new braintree.BraintreeGateway(
     {
         environment: braintree.Environment.Sandbox,
-        merchantId: "ztwjhf688pf57vkj",
-        publicKey: "pzyrtz4hr2xf2zbv",
-        privateKey: "225ae967855a64e5c5b3f2d183d033f6"
+        merchantId: process.env.BT_MERCHANT_ID,
+        publicKey: process.env.BT_PUBLIC_KEY,
+        privateKey: process.env.BT_PRIVATE_KEY
     }
 )
 
@@ -29,7 +28,6 @@ app.get("/client_token",(req,res)=>{
 
 app.post('/checkout', (req, res) => {
     // In production you should not take amounts directly from clients
-    // const { amount, payment_method_nonce: paymentMethodNonce } = req.body;
 
     gateway.transaction
       .sale({
@@ -43,7 +41,6 @@ app.post('/checkout', (req, res) => {
         if(err){
             console.log(err);
         }
-        console.log(result);
         return res.send(result.success);
       })
   });

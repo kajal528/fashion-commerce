@@ -2,6 +2,7 @@ import { useState } from "react"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer";
 import { CloseButton } from "../components/Icons";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
     const cartStoredData = localStorage.getItem("data");
@@ -9,6 +10,7 @@ const Cart = () => {
     const [totalCartPrice, setTotalCartPrice] = useState(()=>{
        return cartData.reduce((acc, curr)=>acc+curr.basePrice,0)
     });
+    const navigate = useNavigate();
     const maxQuantity = 6;
     const minQuantity = 1;
 
@@ -44,6 +46,16 @@ const Cart = () => {
         setCartData([...cartData]);
         localStorage.removeItem("data");
         localStorage.setItem("data", JSON.stringify(cartData));
+    }
+
+    function redirect() {
+        const totalOrderValue = {
+            mrp:totalCartPrice,
+            shippingFee: 0,
+            discount:0,
+            totalCartPrice: totalCartPrice
+        }
+        navigate('/shipping', { state: { totalOrderValue } });
     }
 
     return (
@@ -91,7 +103,7 @@ const Cart = () => {
                                     <span>&#8377; {totalCartPrice}</span>
                                 </div>
                             </div>
-                            <div className=" px-2 py-3 border-2 text-center mt-8 mb-4 font-bold bg-orange-600 text-white cursor-pointer"><button >Place order</button></div>
+                            <div className=" px-2 py-3 border-2 text-center mt-8 mb-4 font-bold bg-orange-600 text-white cursor-pointer w-44 m-auto"><button onClick={redirect}>Place order</button></div>
                         </div>
                     </div>
                 </div>

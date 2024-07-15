@@ -3,3 +3,8 @@ export interface imageCarouselItemInterface{
     id: number;
     image: string;
 }
+export interface imageCarouselInterface{
+    productData: imageCarouselItemInterface[],
+    filter:string,
+    query?:string
+}

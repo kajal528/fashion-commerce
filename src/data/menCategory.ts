@@ -10,21 +10,21 @@ import Wallet from '../assets/category/men-clothing/men-wallet.jpg'
 
 export const menCategory = {
     "menCategory": [
-        {
-            "id": 1,
-            "text": "Kurta",
-            "image":Kurta
-        },
-        {
-            "id": 2,
-            "text": "Shoes",
-            "image":Shoes
-        },
-        {
-            "id": 3,
-            "text": "Wallet",
-            "image": Wallet
-        },
+        // {
+        //     "id": 1,
+        //     "text": "Kurta",
+        //     "image":Kurta
+        // },
+        // {
+        //     "id": 2,
+        //     "text": "Shoes",
+        //     "image":Shoes
+        // },
+        // {
+        //     "id": 3,
+        //     "text": "Wallet",
+        //     "image": Wallet
+        // },
         {
             "id": 4,
             "text": "Jeans",

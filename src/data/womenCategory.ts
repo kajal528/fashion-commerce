@@ -7,24 +7,25 @@ import Shoes from '../assets/category/women-clothing/women-shoe.jpg'
 import Handbag from '../assets/category/women-clothing/women-handbag.jpg'
 import Dress from '../assets/category/women-clothing/women-dress.jpg'
 import Shirts from '../assets/category/women-clothing/women-shirts.jpg'
+import TShirts from '../assets/category/women-clothing/women-tshirt.jpg'
 
 export const womenCategory = {
     "womenCategory": [
-        {
-            "id": 1,
-            "text": "Kurta",
-            "image":Kurta
-        },
-        {
-            "id": 2,
-            "text": "Shoes",
-            "image":Shoes
-        },
-        {
-            "id": 3,
-            "text": "Bag",
-            "image":Handbag
-        },
+        // {
+        //     "id": 1,
+        //     "text": "Kurta",
+        //     "image":Kurta
+        // },
+        // {
+        //     "id": 2,
+        //     "text": "Shoes",
+        //     "image":Shoes
+        // },
+        // {
+        //     "id": 3,
+        //     "text": "Bag",
+        //     "image":Handbag
+        // },
         {
             "id": 4,
             "text": "Jeans",
@@ -42,18 +43,23 @@ export const womenCategory = {
         },
         {
             "id": 7,
-            "text": "Shirt",
+            "text": "Shirts",
             "image":Shirts
+        },
+        {
+            "id": 10,
+            "text": "TShirts",
+             "image":TShirts
         },
         {
             "id": 8,
             "text": "Dress",
             "image":Dress
         },
-        {
-            "id": 9,
-            "text": "Trackpants",
-            "image":Trackpants
-        },
+        // {
+        //     "id": 9,
+        //     "text": "Trackpants",
+        //     "image":Trackpants
+        // },
     ]
 }

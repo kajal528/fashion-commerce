@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import BrainTree from '../braintree/BrainTree.tsx'
 import Navigation from '../components/Navigation.tsx';
 import Footer from '../components/Footer.tsx';
 import { RotatingLines } from 'react-loader-spinner';
+import { AuthContext } from '../context/AuthContextProvider.tsx';
 
 const Payment = () => {
 
@@ -13,6 +14,8 @@ const Payment = () => {
 
   const[token, setToken] = useState("");
     const[isTransactionSuccessful, setIsTransactionSuccessful] = useState();
+    const { setUserLoggedIn } = useContext(AuthContext);
+
     let data = {
       orderId:22222,
     }
@@ -20,8 +23,9 @@ const Payment = () => {
     useEffect(()=>{
          getToken();
     },[])
-
-   
+    useEffect(()=>{
+      setUserLoggedIn()
+  },[])
 
     async function getToken() {
         const url = "http://localhost:3000/client_token";

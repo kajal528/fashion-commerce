@@ -1,17 +1,25 @@
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '../context/AuthContextProvider';
 
 const ReviewOrderSummary = () => {
     const navigate = useNavigate();
     const  {state}  = useLocation();
+    const { setUserLoggedIn } = useContext(AuthContext);
      const {shippingDetails, priceDetails} = state;
 
      const { firstname, lastname, address, states, city,  postalcode, country, email, contact } = shippingDetails;
      const { mrp, shippingFee, discount,totalCartPrice} = priceDetails.totalOrderValue;
    
+
     const cartStoredData = localStorage.getItem("data");
     const orderDetails = cartStoredData? JSON.parse(cartStoredData):[];
+
+    useEffect(()=>{
+        setUserLoggedIn()
+    },[])
 
     const onClick = ()=>{
         navigate('/payment', {state:{totalCartPrice}})
@@ -73,7 +81,10 @@ const ReviewOrderSummary = () => {
                            </div>
 
                         </div>
-                    <div className=' sm:max-w-none sm:ml-8 max-w-56 mx-auto mt-8 mb-4 px-5 py-2 bg-orange-600 text-white cursor-pointer rounded-md text-center ' onClick={onClick}><button>Proceed</button></div>
+                    <div className=' sm:max-w-none sm:ml-8 max-w-56 mx-auto mt-8 mb-4 px-5 py-2 bg-orange-600
+                     text-white cursor-pointer rounded-md text-center ' onClick={onClick}>
+                        <button>Proceed</button>
+                    </div>
 
                     </div>
                     </div>

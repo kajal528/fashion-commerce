@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "./Icons"
-import { imageCarouselItemInterface } from "../types";
+import { imageCarouselItemInterface, imageCarouselInterface } from "../types";
+import { Link } from "react-router-dom";
 
-const ImageCarousel = (props: { productData: imageCarouselItemInterface[] }) => {
+const ImageCarousel = (props: imageCarouselInterface ) => {
     const imageWidth = 11;
-    const { productData } = props;
+    const { productData, filter, query, } = props;
     const [productIndex, setProductIndex] = useState(0);
     const [imageCarouselItems, setImageCarouselItems] = useState(Math.floor(window.innerWidth / (imageWidth * 16)));
   
     useEffect(() => {
         setProductIndex(0);
-        setImageCarouselItems(Math.round(window.innerWidth / (imageWidth * 16)))
+        setImageCarouselItems(Math.round(window.innerWidth / (imageWidth * 16))) //1rem=16px
     }, [productData])
    
     const handleLeftClick = () => {
@@ -29,12 +30,12 @@ const ImageCarousel = (props: { productData: imageCarouselItemInterface[] }) => 
             }}>
                 {productData.map((data, index) => {
                     return (
-                        <a href="#" key={data.id}>
+                        <Link to={`/products?${filter}=${data.text}${query?`&${query}`:""}`} key={data.id}>
                             <div className={`w-${imageWidth*4} shrink-0 border-2 shadow-md border-transparent aria-hidden:${index<productIndex?'true':'false'}`} >
                                 <img src={data.image} alt="image" className="h-40 w-full" />
                                 <p className="text-center py-2">{data.text}</p>
                             </div>
-                        </a>
+                        </Link>
 
                     )
                 })}

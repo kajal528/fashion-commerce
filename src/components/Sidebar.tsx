@@ -1,12 +1,14 @@
 import { CloseButton } from "./Icons"
-import { MouseEvent, useState } from "react"
+import { MouseEvent, useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../context/AuthContextProvider"
 
 interface SidebarInterface {
   handleClick: (event: MouseEvent) => void
 }
 
 const Sidebar = (props: SidebarInterface) => {
+  const {setUserLogOut} = useContext(AuthContext);
 
   return (
     <div className=" sidebar flex flex-col h-full">
@@ -45,7 +47,7 @@ const Sidebar = (props: SidebarInterface) => {
         </ul>
       </div>
       <div className=" grow flex flex-col justify-end">
-        <button className=" logout px-4 py-2 border-2 bg-gray-200 ">
+        <button className=" logout px-4 py-2 border-2 bg-gray-200 " onClick={()=>setUserLogOut()}>
           Log out
         </button>
       </div>

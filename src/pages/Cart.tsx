@@ -1,18 +1,34 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer";
 import { CloseButton } from "../components/Icons";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContextProvider";
 
 const Cart = () => {
+
+    const { userLoggedIn, setUserLoggedIn } = useContext(AuthContext);
+    // const userData = localStorage.getItem("user");
+    // const [userLoggedIn, setUserLoggedIn] = useState(userData != null ? true : false);
     const cartStoredData = localStorage.getItem("data");
     const [cartData, setCartData] = useState(cartStoredData != null ? JSON.parse(cartStoredData) : []);
     const [totalCartPrice, setTotalCartPrice] = useState(()=>{
        return cartData.reduce((acc, curr)=>acc+curr.basePrice,0)
     });
+    const [totalCartItems, setTotalCartItems] = useState(0);
     const navigate = useNavigate();
     const maxQuantity = 6;
     const minQuantity = 1;
+
+    useEffect(()=>{
+        setUserLoggedIn()
+    },[])
+
+    useEffect(()=>{
+        setTotalCartItems(()=>{
+            return cartData.reduce((acc, curr)=>acc+curr.quantity,0)
+        })
+    },[cartData])
 
     function onIncrement(index: number) {
         let data = cartData[index]
@@ -40,7 +56,6 @@ const Cart = () => {
 
     function removeItem(index: number) {
         const basePriceOfItem = cartData[index].basePrice;
-        console.log(basePriceOfItem);
         setTotalCartPrice((prev)=>prev-basePriceOfItem)
         cartData.splice(index, 1)
         setCartData([...cartData]);
@@ -49,18 +64,24 @@ const Cart = () => {
     }
 
     function redirect() {
-        const totalOrderValue = {
-            mrp:totalCartPrice,
-            shippingFee: 0,
-            discount:0,
-            totalCartPrice: totalCartPrice
+        if(userLoggedIn){
+            const totalOrderValue = {
+                mrp:totalCartPrice,
+                shippingFee: 0,
+                discount:0,
+                totalCartPrice: totalCartPrice
+            }
+            navigate('/shipping', { state: { totalOrderValue } });
         }
-        navigate('/shipping', { state: { totalOrderValue } });
+        else{
+            navigate('/signup');
+        }
+      
     }
 
     return (
         <>
-            <Navigation />
+            <Navigation totalCartItems={totalCartItems}/>
             <div className=" mt-32 md:mt-20 flex flex-col  h-screen">
                 <div className=" grid md:grid-cols-[2fr_1fr] grow ">
                     <div className=" shopping-cart mx-4 sm:mx-8 md:my-8 my-2 shadow-md sm:px-4 h-max ">
@@ -103,7 +124,10 @@ const Cart = () => {
                                     <span>&#8377; {totalCartPrice}</span>
                                 </div>
                             </div>
-                            <div className=" px-2 py-3 border-2 text-center mt-8 mb-4 font-bold bg-orange-600 text-white cursor-pointer w-44 m-auto"><button onClick={redirect}>Place order</button></div>
+                            <div className={` px-2 py-3 border-2 text-center mt-8 mb-4 font-bold text-white w-44 m-auto ${cartData.length===0? 'bg-orange-400':' bg-orange-600'}`}
+                            >
+                                <button onClick={redirect} disabled={cartData.length===0?true:false} >Place order</button>
+                            </div>
                         </div>
                     </div>
                 </div>

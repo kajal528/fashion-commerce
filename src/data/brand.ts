@@ -8,6 +8,7 @@ import Skechers from '../assets/brand/skechers.jpg'
 import Biba from '../assets/brand/biba.jpg'
 
 export const brand = { 
+
     "brand": [
     {
         "text":"Adidas",
@@ -20,7 +21,7 @@ export const brand = {
         "image": Puma
     },
     {
-        "text":"H&M",
+        "text":"HM",
         "id": 5,
         "image": HM
     },
@@ -34,21 +35,21 @@ export const brand = {
         "id": 8,
         "image": Skechers
     },
-    {
-        "text":"Bata",
-        "id": 9,
-        "image": Bata
-    },
-    {
-        "text":"Biba",
-        "id": 10,
-        "image": Biba
-    },
-    {
-        "text":"Aurella",
-        "id": 11,
-        "image": Aurelia
-    },
+    // {
+    //     "text":"Bata",
+    //     "id": 9,
+    //     "image": Bata
+    // },
+    // {
+    //     "text":"Biba",
+    //     "id": 10,
+    //     "image": Biba
+    // },
+    // {
+    //     "text":"Aurella",
+    //     "id": 11,
+    //     "image": Aurelia
+    // },
   ]
 }
 

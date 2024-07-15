@@ -4,8 +4,8 @@ import SuggestedProducts from "./SuggestedProducts"
 const MainSection = () => {
   return (
     <div className="mb-10">
-    <SuggestedProducts/>
-    <ProductSection category='Brand'/>
+    <SuggestedProducts category='category'/>
+    <ProductSection category='brand'/>
     </div>
   )
 }

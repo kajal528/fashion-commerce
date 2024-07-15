@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { boysOvercoat, girlClothing, handBag, sneaker } from "./images";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+    const navigate = useNavigate();
     const [slide, setSlide] = useState<number>(0);
     const img1 = boysOvercoat
     const img2 = girlClothing
@@ -41,7 +43,8 @@ const HeroSection = () => {
                     <button className={`slide-4  w-3 h-3 rounded-full ${slide === 3 ? 'bg-gray-700' : 'bg-gray-500'}`}
                         onClick={() => setSlide(3)} />
                 </div>
-            <div className=" absolute border-2 border-orange-300 text-orange-700 bg-white tracking-wide px-3 py-2 rounded-lg font-bold bottom-8 right-8">
+            <div className=" absolute border-2 border-orange-300 text-orange-700 bg-white tracking-wide px-3 py-2 rounded-lg font-bold bottom-8 right-8"
+            onClick={()=>navigate('/products')}>
                 <button>Explore</button>
             </div>
             </div>

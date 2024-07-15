@@ -3,7 +3,7 @@ import ImageCarousel from "./ImageCarousel";
 import { womenCategory } from "../data/womenCategory"
 import { menCategory } from "../data/menCategory"
 
-const SuggestedProducts = () => {
+const SuggestedProducts = (props:{category:string}) => {
 
   const [activeMenButton, setActiveMenButton] = useState(true);
 
@@ -21,7 +21,7 @@ const SuggestedProducts = () => {
         </button>
       </div>
       <div className=" slider w-full h-[1px] bg-gray-400 -translate-y-[5px]"></div>
-      <ImageCarousel productData={activeMenButton?menCategory.menCategory:womenCategory.womenCategory}/>
+      <ImageCarousel productData={activeMenButton?menCategory.menCategory:womenCategory.womenCategory} query={`gender=${activeMenButton?"Men":"Women"}`} filter={props.category}/>
     </section>
   )
 }
